@@ -34,6 +34,7 @@ body {
     width: 100%;
     padding: 2rem 9%;
     background: transparent;
+    
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -80,7 +81,7 @@ section {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background: url('18.jpg') no-repeat;
+    background: var(--second-bg-color);
     background-size: cover;
     background-position: center;
 }
@@ -111,6 +112,7 @@ section {
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
     background-image: linear-gradient(var(--main-color), var(--main-color));
+    
     background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-position: -33rem 0;
@@ -272,9 +274,10 @@ section {
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    padding-bottom: 6rem;
-    background: url('18.jpg') no-repeat;
-    background-size: 100%;
+    padding: 0 9%;
+    padding-bottom: 7rem;
+    background: var(--second-bg-color);
+    background-size: cover;
     background-position: center;
 }
 
@@ -419,7 +422,7 @@ span {
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
-    width: 90%;
+    width: 80%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
@@ -427,32 +430,33 @@ span {
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
-    width: 70%;
+    width: 60%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
-    width: 60%;
+    width: 90%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
-    width: 85%;
+    width: 90%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
-    width: 60%;
+    width: 85%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
-    width: 75%;
+    width: 90%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
-    width: 60%;
+    width: 85%;
 }
 
 .contact {
     min-height: auto;
     padding-bottom: 7rem;
+    background: var(--second-bg-color);
 }
 
 .contact form {
@@ -690,3 +694,91 @@ span {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+.projects {
+    background-color: var(--second-bg-color);
+}
+
+.section__subtitle {
+    font-size: 5rem; /* Adjust font size */
+    font-weight: bold; /* Make it bold */
+    color: var(--text-color); /* Set text color */
+    margin-bottom: 1rem; /* Add some bottom margin for spacing */
+    text-align: center; /* Center align the text */
+    top: 5rem;
+}
+
+
+
+
+.projects__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-block: 1rem;
+}
+
+.projects__card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: calc(50% - 1rem);
+    margin: 0.5rem;
+}
+
+.projects__img {
+    width: 100%; /* Adjust width to fill the container */
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+}
+
+.projects__model {
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+                hsla(0, 0%,0%,0) 0%,
+                hsla(var(--hue),70%,40%, .8) 120%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: bottom .4s;
+}
+
+.projects__subtitle,
+.projects__button {
+    color: var(--text-color);
+    font-size: small;
+}
+
+.projects__subtitle {
+    display: block;
+    margin-bottom: .25rem;
+}
+
+.projects__title {
+    font-size: h2;
+    margin-bottom: .75rem;
+}
+
+.projects__button {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    font-weight: 300;
+}
+
+.projects__button i {
+    font-size: 1.25rem;
+}
+
+.projects__card:hover .projects__model {
+    bottom: 0;
+}
+
